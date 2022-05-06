@@ -1,72 +1,95 @@
-:root{
-  --red: #D01012;
+:root {
+  --red: #d01012;
   --black: #000000;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-header{
+header {
   position: fixed;
   width: 100%;
   top: 20px;
+  z-index: 1000;
 }
 
-.container{
+.container {
   max-width: 1280px;
   margin: 0 auto;
 }
 
-.header-menu img{
+.header-menu img {
   max-width: 70px;
 }
 
-.header-menu{
+.header-menu {
   border-radius: 10px;
   padding: 5px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--red);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  gap: 10px;
+  background: linear-gradient(90deg, rgba(208, 16, 18, 1), rgba(157, 2, 4, 1));
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
-.menu{
+.menu {
   list-style: none;
   display: flex;
   gap: 10px;
 }
 
-.menu a{
+.menu a {
   text-decoration: none;
   display: inline-block;
   padding: 20px 5px;
   color: #fff;
   text-transform: uppercase;
-  font-size: .8rem;
+  font-size: 0.8rem;
+  transition: 0.2s;
 }
 
-@media (max-width: 1280px){
-  header{
+.menu a:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 1280px) {
+  header {
     position: initial;
   }
-  .header-menu{
+  .header-menu {
     border-radius: 0;
   }
 }
 
-main{
-  background: linear-gradient(rgba(0,0,0,.50), rgba(0,0,0,.50) 100%), url("../img/mainIII.png");
+@media (max-width: 363px) {
+  .header-menu {  
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .menu a {
+    padding: 10px 5px 20px 5px;
+  }
+}
+
+main {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.5) 80%,
+      rgba(0, 0, 0) 100%
+    ),
+    url("../img/mainIII.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.main-principal{
+.main-principal {
   height: 600px;
   padding: 10px 30px;
   padding-top: 100px;
@@ -77,18 +100,18 @@ main{
   color: #fff;
 }
 
-.main-principal h1{
+.main-principal h1 {
   font-size: 40px;
   margin-bottom: 10px;
 }
 
-.main-principal p{
+.main-principal p {
   max-width: 70ch;
   margin-bottom: 40px;
 }
 
-.botoes button{
-  background-color: rgba(255, 255, 255, .1);
+.botoes button {
+  background-color: rgba(255, 255, 255, 0.1);
   border: none;
   color: #fff;
   padding: 15px 30px;
@@ -96,19 +119,62 @@ main{
   font-size: 12px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
   border-radius: 3px;
 }
-.botoes button i{
+.botoes button i {
   margin-right: 10px;
 }
-.botoes button:hover{
-  background-color: #D01012;
+.botoes button:hover {
+  background-color: #d01012;
   color: #fff;
+  transform: scale(1.1);
 }
 
-@media (max-width: 1280px){
-  .main-principal{
+@media (max-width: 1280px) {
+  .main-principal {
     padding-top: 10px;
   }
 }
+
+@media (max-width: 700px) {
+  main {
+    background-position: right;
+  }
+  .botoes button + button {
+    margin-top: 10px;
+  }
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 10px 30px;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.filmes,
+.jogos {
+  background: #000;
+}
+
+.filmes {
+  padding-bottom: 50px;
+}
+
+.box-jogos {
+  height: 100%;
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.item{
+  transition: .2s;
+}
+
+.item:hover{
+ transform: scale(0.97);
+} 
